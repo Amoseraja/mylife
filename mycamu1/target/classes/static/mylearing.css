@@ -1,0 +1,288 @@
+@charset "UTF-8";@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    background: #f7f7f7;
+}
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 240px;
+    background: #11101d;
+    transition: all 0.5s ease;
+}
+
+.sidebar.open {
+    width: 60px;
+}
+
+.sidebar .logo-details {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .logo-details i {
+    font-size: 28px;
+    color: #fff;
+    height: 50px;
+    min-width: 60px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.sidebar .logo-details .logo_name {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.sidebar .nav-list {
+    margin-top: 20px;
+}
+
+.sidebar li {
+    position: relative;
+    list-style: none;
+    height: 50px;
+}
+
+.sidebar li .tooltip {
+    position: absolute;
+    top: 0;
+    left: -125px;
+    transform: translateY(-50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    color: #11101d;
+    text-align: center;
+    line-height: 35px;
+    display: none;
+}
+
+.sidebar li:hover .tooltip {
+    display: block;
+}
+
+.sidebar.open li .tooltip {
+    display: none;
+}
+
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    background: #11101d;
+}
+
+.sidebar li a:hover {
+    background: #1d1b31;
+}
+
+.sidebar li i {
+    min-width: 60px;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+}
+
+.sidebar li a .links_name {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    white-space: nowrap;
+    display: block;
+}
+
+.home-section {
+    position: relative;
+    background: #f7f7f7;
+    min-height: 100vh;
+    top: 0;
+    left: 240px;
+    width: calc(100% - 240px);
+    transition: all 0.5s ease;
+}
+
+.sidebar.open ~ .home-section {
+    left: 60px;
+    width: calc(100% - 60px);
+}
+
+.categories,
+.small-container {
+    padding: 0 20px;
+}
+
+.categories .small-container h1 {
+    font-size: 2rem;
+    color: #111;
+}
+
+.categories .small-container p {
+    color: #777;
+}
+
+.categories .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.categories .row .col {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+    text-align: center;
+}
+
+.categories .row .col img {
+    width: 100%;
+}
+
+.categories .row .col h3 {
+    margin-top: 10px;
+    color: #333;
+}
+
+.title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+    color: #111;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.col-4 {
+    flex: 1;
+    max-width: 25%;
+    min-width: 250px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.col-4 img {
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.col-4:hover img {
+    transform: scale(1.1);
+}
+
+.col-4 h4 {
+    font-size: 1.5rem;
+    color: #111;
+    margin: 10px 0;
+}
+
+.col-4 .rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.col-4 .rating i {
+    color: #ff523b;
+}
+
+.col-4 p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.offer .small-container {
+    padding: 0;
+}
+
+.offer .small-container .row {
+    align-items: center;
+}
+
+.offer .small-container .col-2 {
+    flex: 1;
+    padding: 20px;
+}
+
+.offer .small-container .col-2 img {
+    width: 100%;
+}
+
+.offer .small-container .col-2 .btn {
+    background: #ff523b;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.testimonial .small-container {
+    padding: 0;
+}
+
+.testimonial .row .col-3 {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.testimonial .row .col-3 img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+.testimonial .row .col-3 h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.brands .small-container {
+    padding: 0;
+}
+
+.brands .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.brands .row .col-5 {
+    flex: 1;
+    min-width: 100px;
+    margin: 10px;
+    text-align: center;
+}
+
+.brands .row .col-5 img {
+    width: 100px;
+}

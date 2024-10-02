@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Healthy Grow</title>
+    <link rel="stylesheet" href="manager.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxl-h-plus-plus icon'></i>
+            <div class="logo_name">Healthy Grow</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="#home-section">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+         <li>
+                <a href="/instrution">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Instruction</span>
+                </a>
+                <span class="tooltip">Instruction</span>
+            </li>
+          
+          
+           
+            <li>
+                <a href="/annuncement">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">Announcements</span>
+                </a>
+                <span class="tooltip">Announcements</span>
+            </li>
+            <li>
+                <a href="/mylearing">
+                    <i class='bx bx-cart-alt'></i>
+                    <span class="links_name">My Learning</span>
+                </a>
+                <span class="tooltip">My Learning</span>
+            </li>
+            <li>
+                <a href="/feelback">
+                    <i class='bx bx-heart'></i>
+                    <span class="links_name">Feedback</span>
+                </a>
+                <span class="tooltip">Feedback</span>
+            </li>
+            <li>
+                <a href="/addstudent">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Add Employee</span>
+                </a>
+                <span class="tooltip">Add Employee</span>
+            </li>
+          <li class="profile">
+    <div class="profile-details">
+        <div class="name_job">
+            <div class="name" th:text="${user.name}"></div>
+        </div>
+    </div>
+    <a href="/login">
+        <i class='bx bx-log-out' id="log_out"></i>
+    </a>
+</li>
+          
+        </ul>
+    </div>
+    <section class="home-section" id="home-section">
+      <h1></h1>
+        <h1>welcome to manager</h1>
+        <div class="profile-wrapper">
+            <img th:src="images.jpeg" class="profile-picture">
+            <div class="profile-details">
+                <p th:text="'Name: ' + ${user.name}"></p>
+                <p th:text="'Email: ' + ${user.email}"></p>
+                <p th:text="'Department: ' + ${user.department}"></p>
+                <p th:text="'Student ID: ' + ${user.univereid}"></p>
+                <p th:text="'Date of Birth: ' + ${user.dob}"></p>
+               
+               
+               
+            </div>
+        </div>
+    </section>
+    
+    
+        <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+        closeBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+        searchBtn.addEventListener("click", ()=>{ 
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+        function menuBtnChange() {
+            if(sidebar.classList.contains("open")){
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            }else {
+                closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+            }
+        }
+    </script>
+</body>
+</html>

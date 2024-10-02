@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Healthy Grow</title>
+    <link rel="stylesheet" href="userhome.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxl-h-plus-plus icon'></i>
+            <div class="logo_name">Healthy Grow</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="#home-section">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+         <li>
+                <a href="/instrution">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Instruction</span>
+                </a>
+                <span class="tooltip">Instruction</span>
+            </li>
+            <li>
+                <a href="#billing-section"id=billing-section>
+                    <i class='bx bx-chat'></i>
+                    <span class="links_name">Billing</span>
+                </a>
+                <span class="tooltip">Billing</span>
+            </li>
+           <li>
+    <a href="#attendance-section"id=attendance-section>
+        <i class='bx bx-pie-chart-alt-2'></i>
+        <span class="links_name">Attendance</span>
+    </a>
+    <span class="tooltip">Attendance</span>
+</li>
+           
+            <li>
+                <a href="/annuncement">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">Announcements</span>
+                </a>
+                <span class="tooltip">Announcements</span>
+            </li>
+            <li>
+                <a href="/mylearing">
+                    <i class='bx bx-cart-alt'></i>
+                    <span class="links_name">My Learning</span>
+                </a>
+                <span class="tooltip">My Learning</span>
+            </li>
+            <li>
+                <a href="/feelback">
+                    <i class='bx bx-heart'></i>
+                    <span class="links_name">Feedback</span>
+                </a>
+                <span class="tooltip">Feedback</span>
+            </li>
+            <li>
+                <a href="#RESULT-section" id=RESULT-section>
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Result</span>
+                </a>
+                <span class="tooltip">Result</span>
+            </li>
+           
+          <li class="profile">
+    <div class="profile-details">
+        <div class="name_job">
+        
+            <div class="name" th:text="${user.name}"></div>
+        </div>
+    </div>
+    <a href="/login">
+        <i class='bx bx-log-out' id="log_out"></i>
+    </a>
+</li>
+          
+        </ul>
+    </div>
+    <section class="home-section">
+      <h1>welcome to student</h1>
+        <div class="profile-wrapper">
+            <img th:src="amoseimg2.jpg" class="profile-picture">
+            <div class="profile-details">
+                <p th:text="'Name: ' + ${user.name}"></p>
+                <p th:text="'Email: ' + ${user.email}"></p>
+                <p th:text="'Department: ' + ${user.department}"></p>
+                <p th:text="'Student ID: ' + ${user.univereid}"></p>
+                <p th:text="'Date of Birth: ' + ${user.dob}"></p>
+                <p th:text="'Semester: ' + ${user.semester}"></p>
+                <p th:text="'Gender: ' + ${user.gender}"></p>
+                <p th:text="'Course Name: ' + ${user.courseName}"></p>
+            </div>
+        </div>
+    </section>
+     <section class="attendance-section">
+     <div class="container">
+  <h2>attactance</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>   
+           
+  <table class="table">
+    <thead>
+      <tr>
+        <th>subject</th>
+        <th> attachance</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>java program</td>
+        <td th:text="${user.attendce}"></td>
+      
+      </tr>
+      <tr>
+        <td>spring program</td>
+       <td th:text="${user.attendce}"></td>
+         </tr>
+      <tr>
+        <td>springboot program</td>
+         <td th:text="${user.attendce}"></td>
+        <tr>
+        <td>python program</td>
+        <td th:text="${user.attendce}"></td>
+      
+      </tr>
+      <tr>
+        <td>forntend program</td>
+       <td th:text="${user.attendce}"></td>
+         </tr>
+      <tr>
+        <td>Sql program</td>
+         <td th:text="${user.attendce}"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+     
+        
+    </section>
+    <section class="billing-section">
+     <div class="container">
+  <h2>billing</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>   
+    <p th:text="'TOTAL FEES: ' + ${user.cousefee}"></p>  
+    <a href="/paynow" class="button">PAY NOW</a>       
+  <table class="table">
+    <thead>
+      <tr>
+      <td>no</td>
+        <th>subject</th>
+        <th>coursefee</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>1</td>
+        <td>java program</td>
+          <td th:text="${user.cousefee}"></td>
+      
+      </tr>
+      <tr>
+      <td>2</td>
+        <td>spring program</td>
+         <td th:text="${user.cousefee}"></td>
+         </tr>
+      <tr>
+      <td>3</td>
+        <td>springboot program</td>
+           <td th:text="${user.cousefee}"></td>
+        <tr>
+       
+    </tbody>
+  </table>
+</div>
+     
+        
+    </section>
+    
+     <section class="RESULT-section">
+     <div class="container">
+  <h2>RESULT</h2>
+  <p>PERFORM BASIC RESULT ON THIS SEMESTER OF DAILY UPDATE:</p>   
+           
+  <table class="table">
+    <thead>
+      <tr>
+        <th>subject</th>
+        <th>grade</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>java program</td>
+        <td th:text="${user. pythonprogram}"></td>
+      
+      </tr>
+      <tr>
+        <td>spring program</td>
+       <td th:text="${user.Springprogram}"></td>
+         </tr>
+      <tr>
+        <td>springboot program</td>
+         <td th:text="${user.Springbootprogram}"></td>
+        <tr>
+        <td>python program</td>
+        <td th:text="${user.pythonprogram}"></td>
+      
+      </tr>
+      <tr>
+        <td>forntend program</td>
+       <td th:text="${user.reactjs}"></td>
+         </tr>
+      <tr>
+        <td>Sql program</td>
+         <td th:text="${user.mysql}"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+    </section>
+        <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+        closeBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+        searchBtn.addEventListener("click", ()=>{ 
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+        function menuBtnChange() {
+            if(sidebar.classList.contains("open")){
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            }else {
+                closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+            }
+        }
+    </script>
+</body>
+</html>

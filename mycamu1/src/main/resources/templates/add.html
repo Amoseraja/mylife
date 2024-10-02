@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Healthy Grow</title>
+    <link rel="stylesheet" href="add.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxl-h-plus-plus icon'></i>
+            <div class="logo_name">Healthy Grow</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="/instruction">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Instruction</span>
+                </a>
+                <span class="tooltip">Instruction</span>
+            </li>
+            <li>
+                <a href="/announcement">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">Announcements</span>
+                </a>
+                <span class="tooltip">Announcements</span>
+            </li>
+            <li>
+                <a href="/mylearning">
+                    <i class='bx bx-cart-alt'></i>
+                    <span class="links_name">My Learning</span>
+                </a>
+                <span class="tooltip">My Learning</span>
+            </li>
+            <li>
+                <a href="/feedback">
+                    <i class='bx bx-heart'></i>
+                    <span class="links_name">Feedback</span>
+                </a>
+                <span class="tooltip">Feedback</span>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="container">
+            <div class="title">Registration</div>
+            <div class="content">
+                <form th:action="@{/add}" th:object="${user}" method="post">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Full Name</span>
+                            <input type="text" th:field="*{name}" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Username</span>
+                            <input type="text" th:field="*{username}" placeholder="Enter your username" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="text" th:field="*{email}" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Password</span>
+                            <input type="password" th:field="*{password}" placeholder="Enter your password" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Confirm Password</span>
+                            <input type="password" placeholder="Confirm your password" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Python Program</span>
+                            <input type="text" th:field="*{pythonprogram}" placeholder="Enter your Python Program" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Java Program</span>
+                            <input type="text" th:field="*{javaprogram}" placeholder="Enter your Java Program" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Spring Boot Program</span>
+                            <input type="text" th:field="*{Springbootprogram}" placeholder="Enter your Spring Boot Program" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Spring Program</span>
+                            <input type="text" th:field="*{Springprogram}" placeholder="Enter your Spring Program" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">MySQL</span>
+                            <input type="text" th:field="*{mysql}" placeholder="Enter your MySQL" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">React JS</span>
+                            <input type="text" th:field="*{reactjs}" placeholder="Enter your React JS" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">University ID</span>
+                            <input type="number" th:field="*{univereid}" placeholder="Enter your University ID" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Course Fee</span>
+                            <input type="number" th:field="*{cousefee}" placeholder="Enter your Course Fee" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Date of Birth</span>
+                            <input type="text" th:field="*{dob}" placeholder="Enter your Date of Birth" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Department</span>
+                            <input type="text" th:field="*{department}" placeholder="Enter your Department" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Semester</span>
+                            <input type="text" th:field="*{semester}" placeholder="Enter your Semester" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Course Name</span>
+                            <input type="text" th:field="*{courseName}" placeholder="Enter your Course Name" required>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="details">Attendance</span>
+                            <input type="number" th:field="*{attendce}" placeholder="Enter your Attendance" required>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                            <span class="details">Role</span>
+                            <div>
+                                <input type="radio" name="role" th:field="*{role}" id="dot-1" value="ROLE_USER">
+                                <label for="dot-1">
+                                    <span class="dot one"></span>
+                                    <span class="gender">User</span>
+                                </label>
+                                <input type="radio" name="role" th:field="*{role}" id="dot-2" value="ROLE_TEACHER">
+                                <label for="dot-2">
+                                    <span class="dot two"></span>
+                                    <span class="gender">Teacher</span>
+                                </label>
+                                <input type="radio" name="role" th:field="*{role}" id="dot-3" value="ROLE_MANAGER">
+                                <label for="dot-3">
+                                    <span class="dot three"></span>
+                                    <span class="gender">Manager</span>
+                                </label>
+                            </div>
+                        </div>
+                      
+                   <div class="input-box">
+                        <span class="details">Gender</span>
+                        <div>
+                            <input type="radio" name="gender" th:field="*{gender}" id="dot-4" value="male">
+                            <label for="dot-4">
+                                <span class="dot one"></span>
+                                <span class="gender">Male</span>
+                            </label>
+                            <input type="radio" name="gender" th:field="*{gender}" id="dot-5" value="female">
+                            <label for="dot-5">
+                                <span class="dot two"></span>
+                                <span class="gender">Female</span>
+                            </label>
+                            <input type="radio" name="gender" th:field="*{gender}" id="dot-6" value="other">
+                            <label for="dot-6">
+                                <span class="dot three"></span>
+                                <span class="gender">Other</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Register">
+                    </div>
+                </form>
+                <div th:if="${#fields.hasErrors('user')}">
+                    <p th:each="err : ${#fields.errors('user')}" th:text="${err}"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+        searchBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            }
+        }
+    </script>
+</body>
+</html>
